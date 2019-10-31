@@ -1,2 +1,2 @@
 # cmod-manual
-User Manual for Cmod Modularity Framework
+User Manual for Cmod Modularity Framework!
