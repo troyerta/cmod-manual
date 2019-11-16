@@ -1,5 +1,5 @@
   - FAQ
-    - Can you explain Cmod's license?
+    - Can you explain Cmod's license? BSD
   - Why TDD?
   - TDD tutorial for generic embedded system project
   - Adding mocks with FFF
