@@ -13,3 +13,6 @@
     - Make the test pass
   - Format test results
     - Redirect and save results somewhere else
+
+- Starting a new project with Cmod from scratch
+
