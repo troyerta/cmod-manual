@@ -1,6 +1,8 @@
 # Introduction
 
-Welcome to the Cmod guide, the primary reference for the Cmod Modularity Framework. Cmod helps you write more reliable software. The embedded systems software industry is a facinating space that stands benefit the most from quality modular software. But the demands of the industry, the pace of the marketplace, and the unique challenges of the embedded software development world are often at odds with each other. This obscures the availability of tools and techniques that can ease the developer's path to reliable software.
+Welcome to the Cmod guide, the primary reference for the Cmod Modularity Framework. Cmod helps you write more reliable software.
+
+The embedded systems software industry is a facinating space that stands to benefit the most from quality modular software. But the demands of the industry, the pace of the marketplace, and the unique challenges of the embedded software development world are often at odds with each other. This obscures the availability of tools and techniques that can ease the developer's path to reliable software.
 
 Cmod challenges these conflicts by removing barriers that 'excuse' the developer from adopting coding standards, style guides, and disciplines that work for them in non-obvious ways. Cmod is an invitation to say "It's a Ok to use the C language in 2019, because we've safeguarded ourselves".
 

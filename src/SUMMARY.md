@@ -6,6 +6,7 @@
 [Forward](ch00-00-forward.md)
 [Introduction](ch00-01-introduction.md)
 [TDD Review](ch00-02-tdd-lit-review.md)
+[Testability is Modularity](ch00-03-testability-is-modularity.md)
 
 ## Getting started
 - [Getting Started](ch01-00-getting-started.md)
@@ -35,7 +36,12 @@
 
 - [Extending Cmod](ch06-00-cmod-extend.md)
 
+- [FAQ](faq.md)
+
 - [Articles](ch07-00-articles.md)
-  - [Ceedling Quick Comparision](ch07-01-compare-to-ceedling.md)
+  - [Ceedling Quick Compare](ch07-01-compare-to-ceedling.md)
+  - [Cpputest Quick Compare](ch07-02-compare-to-cpputest.md)
+  - [Standalone Unity Quick Compare](ch07-03-compare-to-unity.md)
+  - [Cgreen Quick Compare](ch07-04-compare-to-cgreen.md)
 
 [Tips and Tricks](ch08-00-tips-tricks.md)
