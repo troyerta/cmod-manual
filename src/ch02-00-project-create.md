@@ -16,7 +16,7 @@
 
 - Starting a new project with Cmod from scratch
 
-```
+```text
 my_project/
 |
 ├── io.c

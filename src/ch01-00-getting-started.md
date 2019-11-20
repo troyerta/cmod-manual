@@ -9,7 +9,7 @@ Let’s start our Cmod demo! In this chapter, we’ll do a couple things:
 To start, download the dumb sample script and save it to your favorite sandbox directory. This project is just for show - not a recommended way to start a project.
 
 Now note the project's contents:
-```
+```text
 dumb_sample_project/
 |
 ├── foo/
@@ -50,7 +50,7 @@ Download Cmod from here:
 Save it somewhere nearby your sample project sandbox.
 
 Looking inside the cmod directory, we see the following:
-```
+```text
 cmod/
 |
 ├── cmod
@@ -69,7 +69,7 @@ Open a few of those source files up and examine them if you're not familiar with
 Ok. Now that we've have both the project and the cmod directory, can now merge the two projects together. In this case, the simplest way to do this is to copy the "cmod" file to the sample project root directory, and copy the entire "tools/" directory and it's contents there as well. Don't worry about copying the requirements.txt file if you don't want to. But it won't hurt anything if you do.
 
 This is our resulting sample project:
-```
+```text
 my_project/
 |
 ├── foo/
