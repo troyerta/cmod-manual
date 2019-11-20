@@ -13,9 +13,9 @@ Cmod stands in a unique place among other development tools;
 it is not "installed" to your PC in the traditional sense. Instead, Cmod gets "integrated" into a project.
 
 Cmod will not add environment variables to your PATH, and won't copy itself to your system directories. It lives in your project as a part of your project. This retains the portability of your project across teams of develepers and their host operating systems. Cmod is not made "for" Unix, Windows, or OSx - it's made for your project.
-
+```
 #![Body frame](giphy.gif)
-
+```
 Cmod's requirements are both few and widely popular as tools in the embedded software space already.
 
 This is significant because the tools in this niche space of "embedded systems software development frameworks" (such as those mentioned on the previous page) are arguably inappropriate for embedded SW development in the first place.

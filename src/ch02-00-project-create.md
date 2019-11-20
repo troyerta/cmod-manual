@@ -16,3 +16,22 @@
 
 - Starting a new project with Cmod from scratch
 
+```
+my_project/
+|
+├── io.c
+├── io.h
+├── application.c
+├── application.h
+├── os.c
+├── os.h
+├── stm32f103re.h
+├── utils/..
+├── widget.c
+├── tools
+├── README.md
+├── cmod
+├── Makefile
+└── .gitignore
+```
+
