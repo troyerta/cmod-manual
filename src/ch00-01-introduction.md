@@ -1,10 +1,24 @@
 # Introduction
 
-Welcome to the Cmod guide, the primary reference for the Cmod Modularity Framework. Cmod helps you write more reliable software.
+Welcome to the Cmod guide - the primary reference for the Cmod Modularity Framework. Cmod helps you write more reliable software.
 
-The embedded systems software industry is a facinating space that stands to benefit the most from quality modular software. But the demands of the industry, the pace of the marketplace, and the unique challenges of the embedded software development world are often at odds with each other. This obscures the availability of tools and techniques that can ease the developer's path to reliable software.
+The unique challenges of embedded software development can obscure the pathway to carefully structured software with standards, style, and tests. This is especially common in cross-compiled C applications for embedded systems.
 
-Cmod challenges these conflicts by removing barriers that 'excuse' the developer from adopting coding standards, style guides, and disciplines that work for them in non-obvious ways. Cmod is an invitation to say "It's a Ok to use the C language in 2019, because we've safeguarded ourselves".
+While the reasons for this may be arguable, Cmod challenges the excuses for the prevalency of this phenomenon, and invites code quality into the house - quietly, through the window gaps and cracks in the bricks.
+
+### What is a modularity framework?
+- Modules are first class citizens - your code is. Not your test framework
+- Modules consist of your production code AND your tests.
+- Your TDD process should be accomodating to the needs of your modules - not just the runtime environmnet
+
+### Why do we need one?
+- Because currently available "Test Frameworks" fall short in these ways:
+- Because good project structure should come before adding tests
+- Because testability and modularity feed each other
+- Because too many open-source projects are poorly organized, and without tests
+- Because Cmod is lightweight, and doesn't impose bad ideas onto your projects
+- Because good tests can be decoupled from the test harness, and the execution environment
+- Because modularity forces you to formalize your object scope, and module interfaces/interactions
 
   - Who Is Cmod For?
     - Teams Of Developers
@@ -26,4 +40,3 @@ Cmod challenges these conflicts by removing barriers that 'excuse' the developer
   - Lots To Learn?
   - Does this framework demand I change everything about how I do things?
   - Is there any additional value for anyone who writes software casually?
-  - Does this work for non-embedded application development?

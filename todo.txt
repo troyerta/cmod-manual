@@ -1,0 +1,77 @@
+Proposed new outline
+
+title_page
+foreward
+introduction
+  What is modularity? Isn't it a byproduct of test-driven code?
+    Modularity is an important attribute of a organized, well-structured codebase. Modularity occurs when a unit set of code sources (or modules) behave interchangably in a repeatable way. A modules is a set of related software sources with limited scope of functionality and concern, and can be packaged as an independent deliverable in a portable way.
+
+Show 'set' diagram of related sources making a module
+Show 'set' diagram of modules stacked up next to each other
+
+Here is a logical train:
+If you want to have reliable software, you need to driven development with tests. If you have tests, you should have modules in place to decouple them.
+
+Dividing your codebase in modules accomplishes a number of things:
+Modular software unit division breaks the messy connections and relationships across your codebase. It forces your code to be more independent of it's consummers. Code with few dependencies can be compiled to run on the host PC. Code that can be ran on the host PC can be tested using the host PC.
+
+
+If you have modules, you should have tests.
+If you have tests, you should have managed, portable tests
+IF you have managed, portable tests, you should have managed, portable modules
+If you
+
+  What is a modularity framework? How is it different than a test framework?
+    Modules are first class citizens - your code is. Not your testing environment
+    Modules consist of your production code AND your tests.
+      Your TDD process should be accomodating to the needs of your modules - not just the runtime environmnet
+  Why do we need one?
+    Because the currently available "Test Frameworks" fall short in these ways:
+    Because good project structure should come before adding tests
+    Because testability and modularity feed each other
+    Because too many open-source projects are poorly organized, and without tests
+    Because Cmod is lightweight, and doesn't impose bad ideas onto your projects
+    Because good tests can be decoupled from the test harness, and the execution environment
+    Because modularity forces you to formalize your object scope, and module interfaces/interactions
+
+So start with a demo or two, and start making testable modules for your project!
+
+Assumptions and Requirements
+  Why Python 3.8?
+  Why GNU Make?
+
+Demo - Integrate Cmod to a C project
+  Download sample project
+  Download Cmod
+  Copy the CMod sources, script, and config
+  Build the venv
+  Configure Cmod
+  Add tests to module
+  Do TDD
+  Generate a report
+
+Demo - Start a new project with Cmod
+  Download Cmod
+  Download boilerplate starter code
+  Make a module
+  Make a threaded module
+  Test it all
+
+How tos:
+  Set a file name scheme for generated files
+  Specify a specific structure for each module
+  Link in special libraries and dependencies for some modules
+  Change test verbosity and output format
+  Change the test report format
+  Make a minimal Cmod integration
+  Make a full Cmod integration
+  Change the test harness that Cmod uses
+  Enable the Test Abstraction Layer (TAL)
+  Include FFF to generate function mocks
+
+FAQ
+  How do I get help with Cmod?
+
+Articles:
+  Cmod Compared to test frameworks
+  Is full TDD possible using Cmod?

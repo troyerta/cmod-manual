@@ -5,8 +5,6 @@
 [Cmod Modularity Framework](title_page.md)
 [Forward](ch00-00-forward.md)
 [Introduction](ch00-01-introduction.md)
-[TDD Review](ch00-02-tdd-lit-review.md)
-[Testability is Modularity](ch00-03-testability-is-modularity.md)
 
 ## Getting started
 - [Getting Started](ch01-00-getting-started.md)
