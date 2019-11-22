@@ -1,9 +1,9 @@
 
 ### Download The Demo Project
 
-To start, download the dumb sample project and save it to your favorite sandbox directory, and call it "dumb_sample_project". This project is just for show - not a recommended way to start a project.
+To start, download the dumb sample project and save it to your favorite sandbox directory. You can call it "dumb_sample_project" or something similar. We'll use this directory for demonstration purposes only, so feel free modify like it any way you like.
 
-Now note the project's contents:
+Now note the Demo Project's contents:
 ```text
 dumb_sample_project/
 |
@@ -17,22 +17,33 @@ dumb_sample_project/
 └── Makefile
 ```
 Some observations:
-- There are two C modules: "foo" and "bar", and a main source file
-- The project build system is GNU Make. You can even build the
-  project if you have Make and GCC installed:
+- We have a main source file
+- We can see two C modules: "foo" and "bar"
+- Given the Makefile, we assume we can build the project with GNU Make.
+
+### Build the Demo Project
+
+If you have Make and GCC installed, give it a try:
 ```text
 $ make
 ```
 
-- If you're not using GCC, just go into the Makefile and change the CC variable to point to a C compiler you do have installed, or simply 'cc'. If this step is necessary for you, you'll need to do this somewhere else again later - but don't worry, this isn't a barrier to using Cmod at all.
+```text
+$ ./main
+```
+
+Of course, you can modify the Makefile to call a different C compiler if you find it necessary to do so. Luckily, Cmod doesn't care about the C compiler you choose the use.
 
 This is the more important point:
 
 "Always start from a working place"
 
-Great. So this C project is a "real" project, and is convincingly minimal. Nothing unusual going on here. Heck, if you want to delete the Makefile and build and run this sample program with your own tools, go for it. Cmod doesn't care about your cross compiler - it just needs an ordinary, general C compiler.
+Overall, we find that this project is convincingly minimal. There is nothing unusual, or exceptional going into this project. Heck, if you want to delete the Makefile and build and run this sample program with your own tools, go for it. Cmod doesn't care about your cross compiler either - it just needs an ordinary, general C compiler.
 
-Once you've convinced yourself that nothing funny is going on here, let's make sure our two **hard** dependencies are installed, and accessible from the terminal. Make sure these two commands work:
+### Install Python and Make
+
+If you have this small program building on running on your PC, you've fulfilled the **soft** requirements for using Cmod.
+This means we can move forward - we need to make sure our two **hard** dependencies are installed *and* accessible from the terminal. Make sure these two commands work:
 
 ```shell
 $ python3.8 --version
@@ -48,7 +59,9 @@ License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
 This is free software: you are free to change and redistribute it.
 There is NO WARRANTY, to the extent permitted by law.
 ```
-Still good to go? Great. It's time to add Cmod to our dumb sample project.
+Still good to go? If not you need to get this tools installed and added to your system PATH.
+
+### Add Cmod to the Project
 
 Download Cmod from here:
 
@@ -95,6 +108,8 @@ my_project/
         └── ..
 ```
 
+### Build Cmod's Virtual Environment
+
 Lastly, we'll make a Python3.8 Virtual Environment *in* our dumb sample project. It will contain the Python executable *for this project*.
 
 Do this by running the following: (Be sure to use the exact paths specified here)
@@ -119,6 +134,8 @@ warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 ```
 
 Assuming you got no error messages along the way, you should be ready to use Cmod.
+
+### Summary
 
 To recap, this is all we've done so far:
 
