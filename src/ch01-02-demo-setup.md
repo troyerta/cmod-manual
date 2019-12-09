@@ -112,6 +112,16 @@ my_project/
 
 Lastly, we'll make a Python3.8 Virtual Environment *in* our dumb sample project. It will contain the Python executable *for this project*.
 
+**Why would we want to do this?**
+
+Python's *virtual environment* feature actually builds and locally stores an *isolated instance* of Python as an executable binary in your target directory. This prevents your coworkers and collaborators from having to use identical Python installations on each of their development PCs (all of which may be running different operating systems). Downloading and developing a project no longer affects the system-wide instance of Python, while syncing the versions of Python and any modules used to each developers instance of the project.
+
+This has a couple negative consequences to note:
+
+The virtual environment must be remade each time the project directory is moved or copied to a new location on disk. This is because the system installation of Python and the project's instance of Python need to track each other to allow the system-wide instance to modify the project instance, and make system-wide resources available to the project instance.
+
+The exact mechanisms are not anything to mind, just run cmod venv to rebuild your venv at anytime.
+
 Do this by running the following: (Be sure to use the exact paths specified here)
 ```shell
 $ python3.8 -m venv tools/cmod/venv
