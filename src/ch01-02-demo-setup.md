@@ -114,9 +114,7 @@ Lastly, we'll make a Python3.8 Virtual Environment *in* our dumb sample project.
 
 Do this by running the following: (Be sure to use the exact paths specified here)
 ```shell
-$ python3.8 -m venv tools/venv
-$ source tools/venv/bin/activate
-$ deactivate
+$ python3.8 -m venv tools/cmod/venv
 ```
 
 If you are planning to make this project, or one like into a track git repository, be sure to add the venv to the ignore list. You will not want to track this directory, since it is partly dependent on your PC. Your teammates will surely not want to use your venv either, they will use their own untracked venv when they develope in the project using Cmod.

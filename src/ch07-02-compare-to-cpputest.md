@@ -1,1 +1,0 @@
-# Cpputest Quick Compare

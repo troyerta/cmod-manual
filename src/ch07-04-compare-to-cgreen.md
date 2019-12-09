@@ -1,1 +1,0 @@
-# Cgreen Quick Compare
