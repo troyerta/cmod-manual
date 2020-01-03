@@ -2,21 +2,35 @@
 
 ### Clone the Demo Project
 
-To start, download the dumb sample project and save it to your favorite sandbox directory. You can call it "dumb_sample_project" or something similar. We'll use this directory for demonstration purposes only, so feel free modify like it any way you like.
+To start, clone the Cmod demo project into a directory called "cmod-demo". We'll use this directory for demonstration purposes only, so feel free to place somewhere disposable.
 
-Now note the Demo Project's contents:
-```text
-dumb_sample_project/
-|
-├── foo/
-|   ├── foo.c
-|   └── foo.h
-├── bar/
-|   ├── bar.c
-|   └── bar.h
-├── main.c
-└── Makefile
+```shell
+$ git clone http://github.com/troyerta/cmod-demo cmod-demo
 ```
+
+Start by navigating to the demo project directory and not the contents:
+
+```shell
+$ cd cmod-demo
+$ tree
+.
+├── bar
+│   ├── bar.c
+│   └── bar.h
+├── build
+│   └── main.out
+├── foo
+│   ├── foo.c
+│   └── foo.h
+├── main.c
+├── Makefile
+└── README.md
+
+3 directories, 8 files
+```
+
+CONTINUE
+
 Some observations:
 - We have a main source file
 - We can see two C modules: "foo" and "bar"
@@ -24,17 +38,7 @@ Some observations:
 
 ### Get started:
 
-Clone the Cmod demo project into a directory called "cmod_demo":
 
-```
-$ git clone http://github.com/troyerta/cmod_demo cmod_demo
-```
-
-Start by navigating to the demo project directory:
-
-```
-$ cd cmod_demo
-```
 
 This demo is just the cmod scripts included with some default config settings.
 
@@ -48,6 +52,10 @@ Make sure cmod works: (make sure the "cmod" file is executable)
 ```
 $ chmod cmod 774 && ./cmod help
 ```
+
+
+
+
 
 Given this is working, notice a few interesting points about Cmod to note:
 
