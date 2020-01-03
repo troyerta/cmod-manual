@@ -1,58 +1,45 @@
+## Assumptions & Requirements
 
-# Assumptions & Requirements
+Cmod is based on use of a few widely available, and popular tools already found in many C project development environments:
 
+Requirements for the development environment:
+(These tools must be accessible from the command line / system PATH)
+- Python 3.7.0 (no Python 2 support)
+- GNU Make
+- GCC C compiler
 
+Recommended Experience for Developer (but not required):
+- Python basics
+- How C programs are built
+- Make / Makefiles
+- Test-Driven Development Techniques, XUnit-style tests
 
-### Assumptions About the Reader
+### Why does Cmod use these tools and not others?
 
-- A working knowledge of C and the build process for C programs
+Cmod makes use of these tools for a number of reasons:
 
-- Ability to navigate a PC through a command-line interface
+- These tools are each available for all major OS platforms (Windows, Linux, Mac)
 
-- An interest in improving the embedded software
+- They are not new, and not obscure. They each have long proven histories of use in industry, and don't rely on any proprietary vendors. Being open-source, these tools will be around forever.
 
-### System Requirements
+- Maintainability is high for these tools, meaning if anything about your use of these tools needs to change, it will be fairly simple. These tools are relatively simple to understand, and you can find *many* online examples of how to adjust these tools.
 
-Cmod has two **hard** system requirements, and one *soft* requirement:
+All in all, these requirements are simple ones. Cmod does not ask much of your development PC. Having Make, a C compiler, and an up-to-date to Python 3.8 installation (Python 2 is deprecated) is all basic stuff to have.
 
-- **Python 3.8x and GNU Make**
+That said, here are the Debian/Ubuntu commands for checking for correction installation:
 
-- *A C compiler* for the development PC - accessible from your system path
-
-That's it. Again, these are the system requirements, not the user requirements. You don't *have* to know anything about Make or Python. But it's recommended that you do. After all, Cmod is just a collection of Python scripts that call Make in special ways.
-
-This implies a number interesting facts about Cmod:
-
-- Cmod gets "integrated" into a project, not installed to your computer
-  - Cmod will not add environment variables to your PATH, and won't copy itself to your system directories
-
-  - Cmod is not made "for" Unix, Windows, or OSx - it's made for your project
-  - Cmod lives with your project. This ensures portability of your projects across teams of developers and whatever operating systems they choose to develop on.
-
-- Each instance of Cmod can be modified to suit the special needs of it's host project
-
-- Cmod is C-compiler agnostic - as long as your development PC can run the resulting executable, the compiler used does not matter
-
-- Cmod is OS-agnostic - it does not matter if you develop on Windows, Linux, or on OSx
-
-- Cmod lets you to write your tests in a delieverable way - the output of your TDD efforts are modules that come with test suites that can be built and ran be any basic C compiler, no dependencies on specific libraries. Cmod can even generate a complete Makefile for you, so you can always package and ship your code in a form that can be tested anywhere,
-
-```text
-#![Body frame](giphy.gif)
+```shell
+$ python3.8 --version
+Python 3.8.0
 ```
 
-## Why GNU Make?
-
-- Make is a bare-minimum development tool already installed on most development machines
-
-- Make is straightforward and transparent about how it builds and links your tests - so they can be understood again later and understood by other developers now
-
-- Using Make encourages a simple runtime environment for the test build, and makes your dependencies obvious
-
-- Easy to move your tests to a specific toolchain
-
-- Easy to export and ship code modules as independently testable by simply including it's tests and a Makefile - true portability
-
-- Easy for another developer to build somewhere else
-
-- Doing TDD should be the focus of your attention, so your development environment should easy to understand and repeatably simple to port to another development machine..
+```shell
+$ make --version
+GNU Make 4.1
+Built for x86_64-pc-linux-gnu
+Copyright (C) 1988-2014 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+```
+All good to go? If not you need to get these tools installed and added to your system PATH.

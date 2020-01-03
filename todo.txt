@@ -1,7 +1,7 @@
 Proposed new outline
 
 title_page
-foreward
+foreword
 introduction
   What is modularity? Isn't it a byproduct of test-driven code?
     Modularity is an important attribute of a organized, well-structured codebase. Modularity occurs when a unit set of code sources (or modules) behave interchangably in a repeatable way. A modules is a set of related software sources with limited scope of functionality and concern, and can be packaged as an independent deliverable in a portable way.
