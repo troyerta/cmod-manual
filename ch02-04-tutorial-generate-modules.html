@@ -1,0 +1,260 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Generate C modules - cmod-manual</title>
+        
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "light" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div id="sidebar-scrollbox" class="sidebar-scrollbox">
+                <ol class="chapter"><li class="expanded affix "><a href="ch00-00-title_page.html">Cmod Modularity Framework</a></li><li class="expanded "><a href="ch01-00-intro-to-cmod.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li><ol class="section"><li class="expanded "><a href="ch01-01-assumptions-requirements.html"><strong aria-hidden="true">1.1.</strong> Assumptions &amp; Requirements</a></li></ol></li><li class="expanded "><a href="ch02-00-tutorial-title.html"><strong aria-hidden="true">2.</strong> Cmod Tutorial</a></li><li><ol class="section"><li class="expanded "><a href="ch02-01-tutorial-getting-started.html"><strong aria-hidden="true">2.1.</strong> Getting Started</a></li><li class="expanded "><a href="ch02-02-tutorial-add-cmod.html"><strong aria-hidden="true">2.2.</strong> Add Cmod</a></li><li class="expanded "><a href="ch02-03-tutorial-find.html"><strong aria-hidden="true">2.3.</strong> Find C modules</a></li><li class="expanded "><a href="ch02-04-tutorial-generate-modules.html" class="active"><strong aria-hidden="true">2.4.</strong> Generate C modules</a></li><li class="expanded "><a href="ch02-05-tutorial-generate-files.html"><strong aria-hidden="true">2.5.</strong> Generate C files</a></li><li class="expanded "><a href="ch02-06-tutorial-test.html"><strong aria-hidden="true">2.6.</strong> Test C modules</a></li><li class="expanded "><a href="ch02-07-tutorial-clean.html"><strong aria-hidden="true">2.7.</strong> Clean C modules</a></li><li class="expanded "><a href="ch02-08-tutorial-export.html"><strong aria-hidden="true">2.8.</strong> Export C modules</a></li><li class="expanded "><a href="ch02-09-tutorial-config.html"><strong aria-hidden="true">2.9.</strong> Configure Cmod</a></li></ol></li><li class="expanded "><a href="ch03-00-customize_cmod.html"><strong aria-hidden="true">3.</strong> Customize Cmod</a></li><li class="expanded "><a href="ch04-00-project-create.html"><strong aria-hidden="true">4.</strong> Create a project with Cmod</a></li><li class="expanded "><a href="ch05-00-cmod-integrate.html"><strong aria-hidden="true">5.</strong> Add Cmod to Existing project</a></li><li class="expanded "><a href="ch06-00-command-ref.html"><strong aria-hidden="true">6.</strong> Cmod Command Reference</a></li><li class="expanded "><a href="ch06-01-faq.html"><strong aria-hidden="true">7.</strong> FAQ</a></li><li class="expanded "><a href="ch06-02-articles.html"><strong aria-hidden="true">8.</strong> Articles</a></li><li class="expanded "><a href="ch06-03-tips-tricks.html"><strong aria-hidden="true">9.</strong> Tips and Tricks</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar" class="menu-bar">
+                    <div id="menu-bar-sticky-container">
+                        <div class="left-buttons">
+                            <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                                <i class="fa fa-bars"></i>
+                            </button>
+                            <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                                <i class="fa fa-paint-brush"></i>
+                            </button>
+                            <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                                <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                            </ul>
+                            
+                            <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                                <i class="fa fa-search"></i>
+                            </button>
+                            
+                        </div>
+
+                        <h1 class="menu-title">cmod-manual</h1>
+
+                        <div class="right-buttons">
+                            <a href="print.html" title="Print this book" aria-label="Print this book">
+                                <i id="print-button" class="fa fa-print"></i>
+                            </a>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1><a class="header" href="#generate-c-modules" id="generate-c-modules">Generate C modules</a></h1>
+<p>Let's start by generating an instance of Cmod's first-class citizens: a C module.</p>
+<p>Use this command to generate an example &quot;accelerometer&quot; module: Read the output before pressing &quot;ENTER&quot;</p>
+<pre><code>$ cmod generate --module=accel
+</code></pre>
+<p>Cmod shows you a preview of the files it's planning to generate for your module.</p>
+<p>Each of the filenames and filepaths shown in this preview are configurable, and can be changed suite your project's naming scheme, organizational requires, or any additional preferences. See &quot;Module Configuration&quot; for details.</p>
+<p>If you messed up your module's name, you have a chance to cancel the operation by pressing &quot;n&quot; for &quot;no&quot;.</p>
+<p>Press &quot;ENTER&quot; from here to make your module.</p>
+<p>Using your favorite IDE, examine your new module's contents. You'll see that a module is just a directory with a templated arrangement of C sources (.c) and headers (.h). This means that distinguishing a directory in your project from a module becomes a little tricky. We need some way to mark each module directory as distinct from other project directories.</p>
+<p>Cmod's default solution is to identify any directory with a &quot;unit_test&quot; directory within it as a module. The identifying marker file or directory can be configured as anything else, since there are plentry of reasons why the default marker may not suit your project. See &quot;Module Configuration&quot; for details.</p>
+<p>Since the module we just created contains this marker, cmod can find the &quot;accel&quot; module anytime we need to perform module tasks in our project. You can confirm that Cmod is aware of your module:</p>
+<pre><code>$ mkdir not_a_module
+$ cmod list
+</code></pre>
+<p>You'll see that cmod will ignore any directory that does not contain the module marker.</p>
+<p>Cmod's module awareness works for nested modules too, generate some additional modules before continuing:</p>
+<pre><code>accel/lism43566d
+
+wifi
+
+graphics/primitives/circle
+
+graphics/primitives/rectangle
+</code></pre>
+<p>While Cmod commands are memorable and tend to be complete words specifying actions, they can still be a mouthful to type each time. You can use &quot;$ cmod gen -m=module_path&quot; if you prefer to be brief. See &quot;Cmod Command Aliases&quot; page for variations of each command and tips for calling into cmod with brevity.</p>
+<p>Note that the modules we created are named by the deepest directory in the path we specify. This means that &quot;circle&quot; and &quot;rectangle&quot; are modules, but &quot;primitives&quot; is just a directory. This also means that the lism43566d module just happens to live in the accel module, treating it like just another directory. The two modules actually have little to do with each other, with is a favorable property of modular code. In this case, it could make sense to nest these two modules in the name of organization. We could choose to never use nested modules by simply moving them all to the project directory for a flat project structure, or just generating them there in the first place. Cmod does not care about how your choose to organize your project.</p>
+<p>Now list out your modules again to confirm &quot;primitives&quot; is not a module:</p>
+<pre><code>$ cmod list
+</code></pre>
+<p>If you want to be more choosy with the modules to look for, you can specify a different root module to search from:</p>
+<pre><code>$ cmod list --m=graphics
+</code></pre>
+<p>While it may be nice to get lists of modules, this command is not very useful to the software developer. Understanding this command gives insight to how Cmod sees and manages your project.</p>
+<p>Projects often contain a mixture of directories containing source code, libraries, tools, scripts, and documentation. Cmod includes a more useful command that lets you view your project's modules, along with the relationships between them. Think of it as way to filter out anything that isn't managed by Cmod.</p>
+<pre><code>$ cmod tree
+</code></pre>
+<p>Just like with the list command, you can specify a different root module to draw the tree from:</p>
+<pre><code>$ cmod tree --m=graphics
+</code></pre>
+<p>One nice thing about the Cmod interface is the carry-over of flags used for each of the commmands. Specifying a module with &quot;--m=&quot; applies a command to a single module. Adding the &quot;--r&quot; flag applies the command to the specified module, and any modules under it, recursively. Leaving out the &quot;--m=&quot; command applies commands to the entire project.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="ch02-03-tutorial-find.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="ch02-05-tutorial-generate-files.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a href="ch02-03-tutorial-find.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a href="ch02-05-tutorial-generate-files.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+        
+        
+        <script type="text/javascript">
+            window.playpen_copyable = true;
+        </script>
+        
+
+        
+
+        
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>

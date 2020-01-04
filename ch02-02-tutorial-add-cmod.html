@@ -1,0 +1,309 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Add Cmod - cmod-manual</title>
+        
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "light" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div id="sidebar-scrollbox" class="sidebar-scrollbox">
+                <ol class="chapter"><li class="expanded affix "><a href="ch00-00-title_page.html">Cmod Modularity Framework</a></li><li class="expanded "><a href="ch01-00-intro-to-cmod.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li><ol class="section"><li class="expanded "><a href="ch01-01-assumptions-requirements.html"><strong aria-hidden="true">1.1.</strong> Assumptions &amp; Requirements</a></li></ol></li><li class="expanded "><a href="ch02-00-tutorial-title.html"><strong aria-hidden="true">2.</strong> Cmod Tutorial</a></li><li><ol class="section"><li class="expanded "><a href="ch02-01-tutorial-getting-started.html"><strong aria-hidden="true">2.1.</strong> Getting Started</a></li><li class="expanded "><a href="ch02-02-tutorial-add-cmod.html" class="active"><strong aria-hidden="true">2.2.</strong> Add Cmod</a></li><li class="expanded "><a href="ch02-03-tutorial-find.html"><strong aria-hidden="true">2.3.</strong> Find C modules</a></li><li class="expanded "><a href="ch02-04-tutorial-generate-modules.html"><strong aria-hidden="true">2.4.</strong> Generate C modules</a></li><li class="expanded "><a href="ch02-05-tutorial-generate-files.html"><strong aria-hidden="true">2.5.</strong> Generate C files</a></li><li class="expanded "><a href="ch02-06-tutorial-test.html"><strong aria-hidden="true">2.6.</strong> Test C modules</a></li><li class="expanded "><a href="ch02-07-tutorial-clean.html"><strong aria-hidden="true">2.7.</strong> Clean C modules</a></li><li class="expanded "><a href="ch02-08-tutorial-export.html"><strong aria-hidden="true">2.8.</strong> Export C modules</a></li><li class="expanded "><a href="ch02-09-tutorial-config.html"><strong aria-hidden="true">2.9.</strong> Configure Cmod</a></li></ol></li><li class="expanded "><a href="ch03-00-customize_cmod.html"><strong aria-hidden="true">3.</strong> Customize Cmod</a></li><li class="expanded "><a href="ch04-00-project-create.html"><strong aria-hidden="true">4.</strong> Create a project with Cmod</a></li><li class="expanded "><a href="ch05-00-cmod-integrate.html"><strong aria-hidden="true">5.</strong> Add Cmod to Existing project</a></li><li class="expanded "><a href="ch06-00-command-ref.html"><strong aria-hidden="true">6.</strong> Cmod Command Reference</a></li><li class="expanded "><a href="ch06-01-faq.html"><strong aria-hidden="true">7.</strong> FAQ</a></li><li class="expanded "><a href="ch06-02-articles.html"><strong aria-hidden="true">8.</strong> Articles</a></li><li class="expanded "><a href="ch06-03-tips-tricks.html"><strong aria-hidden="true">9.</strong> Tips and Tricks</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar" class="menu-bar">
+                    <div id="menu-bar-sticky-container">
+                        <div class="left-buttons">
+                            <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                                <i class="fa fa-bars"></i>
+                            </button>
+                            <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                                <i class="fa fa-paint-brush"></i>
+                            </button>
+                            <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                                <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                            </ul>
+                            
+                            <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                                <i class="fa fa-search"></i>
+                            </button>
+                            
+                        </div>
+
+                        <h1 class="menu-title">cmod-manual</h1>
+
+                        <div class="right-buttons">
+                            <a href="print.html" title="Print this book" aria-label="Print this book">
+                                <i id="print-button" class="fa fa-print"></i>
+                            </a>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h3><a class="header" href="#add-cmod-to-the-project" id="add-cmod-to-the-project">Add Cmod to the Project</a></h3>
+<p>If you're convinced there's no magic happening here, then let's add Cmod to our demo project.</p>
+<p>Clone Cmod somewhere nearby our demo project:</p>
+<pre><code class="language-shell">$ git clone https://github.com/troyerta/cmod.git cmod
+</code></pre>
+<h3><a class="header" href="#examine-cmod" id="examine-cmod">Examine Cmod</a></h3>
+<p>Looking inside the cmod directory, we see the following:</p>
+<p>FIX</p>
+<pre><code class="language-shell">$ cd cmod &amp;&amp; tree
+cmod/
+|
+├── cmod
+└── tools/
+    └── cmod/
+        ├── python_file.py
+        ├── another_one.py
+        └── ..
+</code></pre>
+<p>Apparently, Cmod is just a collection of Python scripts and classes.</p>
+<p>Now that we have both the cmod sources and a demo project, let's add Cmod to the project. In this case, the simplest way to achieve this is to copy the &quot;<strong>cmod</strong>&quot; file and the entire &quot;<strong>tools/</strong>&quot; directory to our project's root directory.</p>
+<p>Make sure your demo project now looks like this:</p>
+<pre><code class="language-shell">$ tree
+cmod-demo/
+|
+├── foo/
+|   ├── foo.c
+|   └── foo.h
+├── bar/
+|   ├── bar.c
+|   └── bar.h
+├── main.c
+├── cmod
+├── Makefile
+└── tools/
+    └── cmod/
+        ├── python_file.py
+        ├── another_one.py
+        └── ..
+</code></pre>
+<h3><a class="header" href="#build-cmods-virtual-environment" id="build-cmods-virtual-environment">Build Cmod's Virtual Environment</a></h3>
+<p>Lastly, we'll make a Python3.8 Virtual Environment <em>in</em> our demo project. It will contain the Python executable <em>for this project</em>.</p>
+<p><strong>Why would we want to do this?</strong></p>
+<p>Python's <em>virtual environment</em> feature actually builds and locally stores an <em>instance</em> of Python 3.8 as an executable binary in some directory you specify. This prevents your coworkers and collaborators from having to use identical Python installations and Host Operating Systems on their development PCs.</p>
+<p>This has a couple negative consequences to note:</p>
+<p>The virtual environment must be deleted and then remade each time the project directory is moved or copied to a new location on disk.</p>
+<p>The exact mechanisms are not anything to mind, just run cmod venv to rebuild your venv at anytime.</p>
+<p>Build the cmod venv so that we can keep our use of Python local to the project. (Be sure to use the exact paths specified here)</p>
+<pre><code>$ python3.8 -m venv tools/cmod/venv
+</code></pre>
+<p>Anytime you make a venv, be sure to add the venv directory to the .gitignore list if you are using git to track your project.</p>
+<pre><code class="language-shell">$ echo 'tools/cmod/venv' &gt;&gt; .gitignore
+</code></pre>
+<h3><a class="header" href="#test-cmod" id="test-cmod">Test Cmod</a></h3>
+<p>Mark the cmod file as &quot;executable&quot;. This is the main entry point for any Cmod command we invoke.</p>
+<pre><code>$ chmod 774 cmod
+</code></pre>
+<p>Test the Cmod executable.</p>
+<pre><code class="language-shell">$ ./cmod help
+</code></pre>
+<p>Given the &quot;help&quot; command is working, we note a few interesting things about Cmod:</p>
+<ul>
+<li>Cmod gets &quot;integrated&quot; into a project, not installed to your computer</li>
+<li>Cmod will not add environment variables to your PATH, and won't copy itself to your system directories</li>
+<li>Cmod is not made &quot;for&quot; Unix, Windows, or OSx - it's made for your project</li>
+<li>Cmod lives with your project.</li>
+<li>Each instance of Cmod can be modified to suit the special needs of it's host project</li>
+</ul>
+<h3><a class="header" href="#invoking-cmod" id="invoking-cmod">Invoking Cmod</a></h3>
+<p>When you run Cmod to do &quot;module things&quot;, the &quot;cmod&quot; file is what you execute.</p>
+<pre><code class="language-shell">$ ./cmod &lt;command&gt;
+</code></pre>
+<p>A file is normally executed with &quot;./&quot; on Unix systems.</p>
+<p>For commonly-used scripts, it can be nice to add an alias to your terminal to shorten the invocation command.</p>
+<p>A good alias to start with is abbreviating ./cmod to just cmod.</p>
+<p>This can be done by adding the following to your .bashrc:</p>
+<p>.bashrc:</p>
+<pre><code>alias cmod='./cmod'
+</code></pre>
+<p>Now you can invoke cmod by with a slightly simpler command:</p>
+<pre><code class="language-shell">$ cmod &lt;command&gt;
+</code></pre>
+<p>Additional aliases will be suggested later in the tutorial.</p>
+<h3><a class="header" href="#summary" id="summary">Summary</a></h3>
+<p>To recap, this is all we've done so far:</p>
+<ul>
+<li>Add Cmod files to a dumb sample project</li>
+<li>Setup cmod's Python virtual environment</li>
+<li>Ran ./cmod help too make sure the cmod venv works</li>
+<li>Added a simple &quot;./cmod&quot; alias</li>
+</ul>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="ch02-01-tutorial-getting-started.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="ch02-03-tutorial-find.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a href="ch02-01-tutorial-getting-started.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a href="ch02-03-tutorial-find.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+        
+        
+        <script type="text/javascript">
+            window.playpen_copyable = true;
+        </script>
+        
+
+        
+
+        
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>

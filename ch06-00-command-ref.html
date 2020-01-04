@@ -1,0 +1,344 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Cmod Command Reference - cmod-manual</title>
+        
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "light" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div id="sidebar-scrollbox" class="sidebar-scrollbox">
+                <ol class="chapter"><li class="expanded affix "><a href="ch00-00-title_page.html">Cmod Modularity Framework</a></li><li class="expanded "><a href="ch01-00-intro-to-cmod.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li><ol class="section"><li class="expanded "><a href="ch01-01-assumptions-requirements.html"><strong aria-hidden="true">1.1.</strong> Assumptions &amp; Requirements</a></li></ol></li><li class="expanded "><a href="ch02-00-tutorial-title.html"><strong aria-hidden="true">2.</strong> Cmod Tutorial</a></li><li><ol class="section"><li class="expanded "><a href="ch02-01-tutorial-getting-started.html"><strong aria-hidden="true">2.1.</strong> Getting Started</a></li><li class="expanded "><a href="ch02-02-tutorial-add-cmod.html"><strong aria-hidden="true">2.2.</strong> Add Cmod</a></li><li class="expanded "><a href="ch02-03-tutorial-find.html"><strong aria-hidden="true">2.3.</strong> Find C modules</a></li><li class="expanded "><a href="ch02-04-tutorial-generate-modules.html"><strong aria-hidden="true">2.4.</strong> Generate C modules</a></li><li class="expanded "><a href="ch02-05-tutorial-generate-files.html"><strong aria-hidden="true">2.5.</strong> Generate C files</a></li><li class="expanded "><a href="ch02-06-tutorial-test.html"><strong aria-hidden="true">2.6.</strong> Test C modules</a></li><li class="expanded "><a href="ch02-07-tutorial-clean.html"><strong aria-hidden="true">2.7.</strong> Clean C modules</a></li><li class="expanded "><a href="ch02-08-tutorial-export.html"><strong aria-hidden="true">2.8.</strong> Export C modules</a></li><li class="expanded "><a href="ch02-09-tutorial-config.html"><strong aria-hidden="true">2.9.</strong> Configure Cmod</a></li></ol></li><li class="expanded "><a href="ch03-00-customize_cmod.html"><strong aria-hidden="true">3.</strong> Customize Cmod</a></li><li class="expanded "><a href="ch04-00-project-create.html"><strong aria-hidden="true">4.</strong> Create a project with Cmod</a></li><li class="expanded "><a href="ch05-00-cmod-integrate.html"><strong aria-hidden="true">5.</strong> Add Cmod to Existing project</a></li><li class="expanded "><a href="ch06-00-command-ref.html" class="active"><strong aria-hidden="true">6.</strong> Cmod Command Reference</a></li><li class="expanded "><a href="ch06-01-faq.html"><strong aria-hidden="true">7.</strong> FAQ</a></li><li class="expanded "><a href="ch06-02-articles.html"><strong aria-hidden="true">8.</strong> Articles</a></li><li class="expanded "><a href="ch06-03-tips-tricks.html"><strong aria-hidden="true">9.</strong> Tips and Tricks</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar" class="menu-bar">
+                    <div id="menu-bar-sticky-container">
+                        <div class="left-buttons">
+                            <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                                <i class="fa fa-bars"></i>
+                            </button>
+                            <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                                <i class="fa fa-paint-brush"></i>
+                            </button>
+                            <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                                <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                            </ul>
+                            
+                            <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                                <i class="fa fa-search"></i>
+                            </button>
+                            
+                        </div>
+
+                        <h1 class="menu-title">cmod-manual</h1>
+
+                        <div class="right-buttons">
+                            <a href="print.html" title="Print this book" aria-label="Print this book">
+                                <i id="print-button" class="fa fa-print"></i>
+                            </a>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1><a class="header" href="#quick-reference" id="quick-reference">Quick Reference</a></h1>
+<p>But why do we need to have a python virtual environment?</p>
+<p>This is an important abstraction layer of sorts. Using a Python virtual environment (venv) ensures your project's use of python and and python libraries and modules does not force any PC developing on your project to have those modules and libraries installed system-wide. This allows all your team members to use their own host-OS, reducing the number of third party requirements for building your project.</p>
+<p>Python allows this with it's venv module, which creates a local instance of a Python installation <strong>in the project</strong> for the development on this project on this machine. But this directory and all it's binary blobs are not added to source control so your peers or coworkers can clone the project, and setup a local Python installation instance (virtual environment) that works on their machine and host OS. It only takes a couple terminal commands to do this, so once your project is cloned, it's just a couple more</p>
+<p>Python scripts are a little less portable than Perl or Ruby scripts can be. I attribute this to Python's relative instability as a language over the last 10 years. Python's popularity surge in this time came with a number of features and changes that broke older Python scripts, but there were also a number of great modules and utilities that make Python a joy to use. It has become much more stable as a language to use since then. So there is something to be said for having an updated installation of Python. 3.8 is recommended for CMod. But, if you need to use a legacy version instead, you can specify the version you need with the venv command.</p>
+<p>Cmod is a collection of python scripts and classes that support structured software development techniques,
+which in turn, simplifies other tasks like unit testing, TDD, and general code maintenance. Once you try it out
+with a simple demo project, you'll see why this may be especially helpful for embedded systems projects using the
+C language.</p>
+<p>Here's the main thing you need to know about Cmod before you integrate it into a project:
+Cmod allows you to manage your project as a collection of testable modules.</p>
+<p>Cmod's definition of a module is just a directory in your project that contains a special file marking it as so.
+This lets you populate your modules with as much or as little production code as you like, since there is no
+agreed-upon definition of the heavily abused term &quot;module&quot;.</p>
+<p>With Cmod's module definition, it is advisable to start organizing your code using a block diagram. It should show your project's
+varying code units, and how they relate to each other in the project directory - not necessarily how they might depend on one-another.</p>
+<p>Block diagrams add a large number of organizational benefits to your project - even before you have any code written, so
+take some time to draw yourself a picture of what you want to codebase to look and feel like.</p>
+<p>Use the back of a napkin to start, or just type out your desired project directory tree to start.</p>
+<p>For formal projects, Gliffy is a good option for professional-looking visualization.</p>
+<p>Before we can do anything with your project's modules, you will also need to spend some time describing your
+project preferences to Cmod by filling out any relevant fields you find in config.txt. There is a more detailed
+guide about this here:</p>
+<p>After your config.ini file is more customized apart from the default settings, you can generate some C modules
+for your project. Cmod will follow your project description in config.ini, and produce ready-to-test
+modules that fit your project's coding style and use your preferred unit test harness!</p>
+<pre><code>./cmod generate --module=moduleA
+</code></pre>
+<p>or simply</p>
+<pre><code>./cmod gen -m=moduleA
+</code></pre>
+<p>or more simply, using the recommended bash aliases:</p>
+<pre><code>gen -m=moduleA
+</code></pre>
+<p>This is about as good as it gets for frameworks in the C language. Simple code/file generation will
+always have subjective results, so be sure you customize these python functions (.....) until you're happy with
+the appearance and names of the generated module files.</p>
+<p>Make a child-module (nested module) by specifying a nested path:</p>
+<pre><code>gen -m=moduleA/subcategory/submoduleA
+</code></pre>
+<p>In this case, submoduleA is a separate and distinct module from moduleA, and subcategory is just a directory in between them.
+Cmod does not see it as a module. These 2 modules are nested, and that's all. There is nothing more we need to know about them.
+There is no dependency chain implied here in this structure, it is just for organizational form. You COULD allow a nested module
+structure imply a dependency chain, but there are reasons why this is not typically done.</p>
+<p>Things to do with your codebase once it's organized into modules: &quot;Cmod things&quot;</p>
+<p>These commands will work with &quot;empty&quot; modules, since Cmod generates a default
+test case automatically. So if you don't have your code moved into your module
+directories yet, don't worry. Just generate some &quot;blank&quot; modules somewhere if you
+just want to experiment with the Cmod command base.</p>
+<p>The &quot;help&quot; command should be your go-to when you need a quick reminder of how to use cmod.
+It's output was thoughfully arranged to be both optimal and pleasant to read. Please enjoy
+using it.</p>
+<pre><code>./cmod --help
+./cmod -help
+./cmod --h
+./cmod -h
+</code></pre>
+<p>The &quot;list&quot; command can be called at any time. All it does is read your project files, and show them in a condensed, helpful way</p>
+<pre><code>./cmod list                                           -- List out all the modules under the project root directory
+./cmod list --module=MODULE_A/module_b                -- List out all the modules under the MODULE_A/module_b
+./cmod list --m=my_mod --s=?                          --List all the test suites under the 'my_mod' module
+./cmod list --m=my_mod --s=TEST_MY_MOD_SUITE --t=?    - List all the test cases under the TEST_MY_MOD_SUITE in my_mod module
+./cmod list --m=my_mod --s=? --t=?  - List all the test suites and their test cases under the my_mod module
+</code></pre>
+<p>The &quot;tree&quot; command works identically to the &quot;list&quot; command, but the output is always formatted with a directory tree output style.</p>
+<p>The &quot;build&quot; command runs the Makefile in each module, telling Make to compile, and link the module tests, but not to run them.</p>
+<pre><code>./cmod build --m=module
+</code></pre>
+<p>The &quot;report&quot; command can also be called at any time, but it's mostly useful when your modules have test results to show.</p>
+<pre><code>./cmod report
+./cmod report --module=MODULE_A/module_b
+./cmod report --module=MODULE_A/module_b --s=TEST_MY_MODULE_B_SUITE
+./cmod report --module=MODULE_A/module_b --s=TEST_MY_MODULE_B_SUITE --t=TestMySpecificTestCase
+./cmod report
+./cmod report
+./cmod report
+</code></pre>
+<p>The &quot;test&quot; command can be ran at any time. It assumes your test builds compile and run.</p>
+<pre><code>./cmod test                   -- Build and Run all tests found in the project
+./cmod test --m=module        -- Build and Run all tests found in the module
+./cmod test --m=module --r    -- Build and Run all tests found in the module, and in all child modules
+./cmod test --v=2             -- Build and Run all tests found in the project, reporting the results with a verbosity level of 2. [0-7 are valid]
+./cmod test --m=module --suite=MODULE_TEST_GROUP -- Build and Run all test cases found in the module's test group called &quot;MODULE_TEST_GROUP&quot;
+./cmod test --m=module --s=MODULE_TEST_GROUP --case=TestMyCaseDoesNotFail   -- Build and Run only the specified test case, requires the module and suite parameters
+</code></pre>
+<p>The &quot;stat&quot; command runs a few tools and returns some interesting metrics about your project modules</p>
+<pre><code>./cmod stat
+./cmod stat --m=module
+./cmod stat --m=module --r
+</code></pre>
+<p>The &quot;tdd&quot; is a quick way to do several things at once, which helps the developer doing Test-Driven Development
+It is a quick way to run</p>
+<pre><code>./cmod build --m=path/to/module
+./cmod test --m=path/to/module
+./cmod report --m=path/to/module
+</code></pre>
+<p>Instead, just use</p>
+<pre><code>./cmod tdd --m=path/to/module
+</code></pre>
+<p>Each build-test-report sequence will occur one at a time in a separate process, for each module specifed:</p>
+<pre><code>./cmod tdd --m=path/to/module --r
+</code></pre>
+<p>OpenProcess:
+./cmod build --m=path/to/module
+./cmod test --m=path/to/module
+./cmod report --m=path/to/module
+CloseProcess</p>
+<p>OpenProcess:
+./cmod build --m=path/to/module/submod1
+./cmod test --m=path/to/module/submod1
+./cmod report --m=path/to/module/submod1
+CloseProcess</p>
+<p>OpenProcess:
+./cmod build --m=path/to/module/submod2
+./cmod test --m=path/to/module/submod2
+./cmod report --m=path/to/module/submod2
+CloseProcess</p>
+<p>If you want to quickly test your entire project, this is probably the fastest way:</p>
+<pre><code>./cmod td
+</code></pre>
+<p>This command also works within any module directory. So I you need to focus your development
+attention with only 1 module for a while, just navigate to the module and run:</p>
+<pre><code>./td
+</code></pre>
+<p>This will run the cmod tdd sequence for the local module only - enabling quick and easy TDD cycles.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="ch05-00-cmod-integrate.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="ch06-01-faq.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a href="ch05-00-cmod-integrate.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a href="ch06-01-faq.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+        
+        
+        <script type="text/javascript">
+            window.playpen_copyable = true;
+        </script>
+        
+
+        
+
+        
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>
