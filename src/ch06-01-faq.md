@@ -10,11 +10,11 @@ What bugs? Just kidding. Cmod is not Developed with a Test-Driven process. So if
 
 ### How is Cmod licensed?
 
-Cmod is shared under an [ISC License](https://opensource.org/licenses/ISC), which is like a modernized BSD2 License.
+Cmod is shared under an [ISC License](https://opensource.org/licenses/ISC).
 
 ### Is Cmod open source?
 
-By implication from the license, Cmod is open source and will always be.
+By implication from the license, Cmod is open source and always will be.
 
 ### How can I contribute to Cmod?
 
@@ -24,7 +24,7 @@ Through our strict vetting process, you may be found worthy as a contributor. Th
 
 2. Don't be a butt. (Remember, snobs don't get jobs)
 
-3. Humbly submit to a code review - with greatfulness.
+3. Humbly submit to a code review - with gratefulness.
 
 4. Take credit for being helpful.
 

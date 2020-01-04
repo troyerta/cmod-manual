@@ -2,13 +2,13 @@
 
 ### Clone the Demo Project
 
-To start, clone the Cmod demo project into a directory called "cmod-demo". We'll use this directory for demonstration purposes only, so feel free to place somewhere disposable.
+To start, clone the Cmod demo project to a directory called "cmod-demo". We'll use this project for demonstration purposes only, so feel free to save it somewhere temporary.
 
 ```shell
 $ git clone http://github.com/troyerta/cmod-demo cmod-demo
 ```
 
-Start by navigating to the demo project directory and not the contents:
+After cloning, navigate to the demo project directory and note the contents:
 
 ```shell
 $ cd cmod-demo
@@ -17,8 +17,6 @@ $ tree
 ├── bar
 │   ├── bar.c
 │   └── bar.h
-├── build
-│   └── main.out
 ├── foo
 │   ├── foo.c
 │   └── foo.h
@@ -26,43 +24,36 @@ $ tree
 ├── Makefile
 └── README.md
 
-3 directories, 8 files
+2 directories, 7 files
 ```
-
-CONTINUE
 
 Some observations:
+- There are two C modules: "foo" and "bar"
 - We have a main source file
-- We can see two C modules: "foo" and "bar"
-- Given the Makefile, we assume we can build the project with GNU Make.
+- Given the presence of a Makefile, we assume we can build the project with GNU Make.
 
-### Get started:
+### Examine the Program
 
+Opening the project with your favorite code editor, you'll see how the demo program is organized and what it does.
 
+The main program simply calls functions from the "foo" and "bar" modules, telling us that they are compiled and linked correctly.
 
-This demo is just the cmod scripts included with some default config settings.
+Looking into the Makefile shows us that any .c sources down to 4 directories deep will be compiled and linked into the program.
 
-Build the cmod venv so that we can keep our use of Python local to the project.
+Lastly, one of the Makefile's rules will run the program after the compiling and linking with GCC.
+
+### Build and Run
+
+If you have Make and GCC installed, go ahead and give this a try:
+```shell
+$ make
+Hello world!
+Foo!
+Bar!
 ```
-$ python3.8 -m venv tools/cmod/venv
-```
 
-Make sure cmod works: (make sure the "cmod" file is executable)
+Of course, you can modify the Makefile to call a different C compiler if you find it necessary to do so. To Cmod, it doesn't matter which C compiler you build the application with. But for this demo, there no reason to assume that Cmod can't use GCC as well.
 
-```
-$ chmod cmod 774 && ./cmod help
-```
+If you had to change the compiler in the Makefile to build and run the program successfully, take note. You will need make a similar adjustment later in this tutorial.
 
-
-
-
-
-Given this is working, notice a few interesting points about Cmod to note:
-
-- Cmod gets "integrated" into a project, not installed to your computer
-  - Cmod will not add environment variables to your PATH, and won't copy itself to your system directories
-
-  - Cmod is not made "for" Unix, Windows, or OSx - it's made for your project
-  - Cmod lives with your project. This ensures portability of your projects across teams of developers and whatever operating systems they choose to develop on.
-
-- Each instance of Cmod can be modified to suit the special needs of it's host project
+Building an running a Makefile-based C project like this is all basic stuff if you understand the how to build C programs already. The point of this step was to convince you that you've started from a "working place" going forward, as a test of our tools. If you would rather delete the Makefile and build the demo program with your own tools, go for it. Cmod doesn't actually care about how you build your application. We'll see why in later steps.

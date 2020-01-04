@@ -1,58 +1,37 @@
-### Add Cmod
-
-
-
-### Build the Demo Project
-
-If you have Make and GCC installed, give it a try:
-```text
-$ make
-```
-
-```text
-$ ./main
-```
-
-Of course, you can modify the Makefile to call a different C compiler if you find it necessary to do so. Luckily, Cmod doesn't care about the C compiler you choose the use.
-
-This is the more important point:
-
-"Always start from a working place"
-
-Overall, we find that this project is convincingly minimal. There is nothing unusual, or exceptional going into this project. Heck, if you want to delete the Makefile and build and run this sample program with your own tools, go for it. Cmod doesn't care about your cross compiler either - it just needs an ordinary, general C compiler.
-
-
-
 ### Add Cmod to the Project
 
-Download Cmod from here:
+If you're convinced there's no magic happening here, then let's add Cmod to our demo project.
 
-Save it nearby the dumb sample project, and call it "cmod".
+Clone Cmod somewhere nearby our demo project:
+```shell
+$ git clone https://github.com/troyerta/cmod.git cmod
+```
+
+### Examine Cmod
 
 Looking inside the cmod directory, we see the following:
-```text
+
+FIX
+```shell
+$ cd cmod && tree
 cmod/
 |
 ├── cmod
-├── requirements.txt
 └── tools/
     └── cmod/
         ├── python_file.py
         ├── another_one.py
         └── ..
 ```
-See how Cmod is just a bunch of Python scripts and classes?
 
-Now that we have both the project and the cmod directory, can now merge the two projects together. In this case, the simplest way to achieve this is to copy the "cmod" file to the sample project root directory, and copy the entire "tools/" directory and it's contents there as well. Don't worry about copying the requirements.txt file if you don't want to. But it won't hurt anything if you do.
+Apparently, Cmod is just a collection of Python scripts and classes.
 
+Now that we have both the cmod sources and a demo project, let's add Cmod to the project. In this case, the simplest way to achieve this is to copy the "**cmod**" file and the entire "**tools/**" directory to our project's root directory.
+
+Make sure your demo project now looks like this:
 ```shell
-$ cp cmod/cmod dumb_sample_project/cmod
-$ cp -a cmod/tools/. cmod/dumb_sample_project/tools
-```
-
-You should have the resulting project:
-```text
-my_project/
+$ tree
+cmod-demo/
 |
 ├── foo/
 |   ├── foo.c
@@ -72,38 +51,77 @@ my_project/
 
 ### Build Cmod's Virtual Environment
 
-Lastly, we'll make a Python3.8 Virtual Environment *in* our dumb sample project. It will contain the Python executable *for this project*.
+Lastly, we'll make a Python3.8 Virtual Environment *in* our demo project. It will contain the Python executable *for this project*.
 
 **Why would we want to do this?**
 
-Python's *virtual environment* feature actually builds and locally stores an *isolated instance* of Python as an executable binary in your target directory. This prevents your coworkers and collaborators from having to use identical Python installations on each of their development PCs (all of which may be running different operating systems). Downloading and developing a project no longer affects the system-wide instance of Python, while syncing the versions of Python and any modules used to each developers instance of the project.
+Python's *virtual environment* feature actually builds and locally stores an *instance* of Python 3.8 as an executable binary in some directory you specify. This prevents your coworkers and collaborators from having to use identical Python installations and Host Operating Systems on their development PCs.
 
 This has a couple negative consequences to note:
 
-The virtual environment must be remade each time the project directory is moved or copied to a new location on disk. This is because the system installation of Python and the project's instance of Python need to track each other to allow the system-wide instance to modify the project instance, and make system-wide resources available to the project instance.
+The virtual environment must be deleted and then remade each time the project directory is moved or copied to a new location on disk.
 
 The exact mechanisms are not anything to mind, just run cmod venv to rebuild your venv at anytime.
 
-Do this by running the following: (Be sure to use the exact paths specified here)
-```shell
+Build the cmod venv so that we can keep our use of Python local to the project. (Be sure to use the exact paths specified here)
+```
 $ python3.8 -m venv tools/cmod/venv
 ```
 
-If you are planning to make this project, or one like into a track git repository, be sure to add the venv to the ignore list. You will not want to track this directory, since it is partly dependent on your PC. Your teammates will surely not want to use your venv either, they will use their own untracked venv when they develope in the project using Cmod.
-
+Anytime you make a venv, be sure to add the venv directory to the .gitignore list if you are using git to track your project.
 ```shell
 $ echo 'tools/cmod/venv' >> .gitignore
 ```
 
-```shell
-$ gcc --version
-gcc (Debian 6.3.0-18+deb9u1) 6.3.0 20170516
-Copyright (C) 2016 Free Software Foundation, Inc.
-This is free software; see the source for copying conditions.  There is NO
-warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+### Test Cmod
+
+Mark the cmod file as "executable". This is the main entry point for any Cmod command we invoke.
+
+```
+$ chmod 774 cmod
 ```
 
-Assuming you got no error messages along the way, you should be ready to use Cmod.
+Test the Cmod executable.
+```shell
+$ ./cmod help
+```
+
+Given the "help" command is working, we note a few interesting things about Cmod:
+
+- Cmod gets "integrated" into a project, not installed to your computer
+- Cmod will not add environment variables to your PATH, and won't copy itself to your system directories
+- Cmod is not made "for" Unix, Windows, or OSx - it's made for your project
+- Cmod lives with your project.
+- Each instance of Cmod can be modified to suit the special needs of it's host project
+
+### Invoking Cmod
+
+When you run Cmod to do "module things", the "cmod" file is what you execute.
+
+```shell
+$ ./cmod <command>
+```
+
+A file is normally executed with "./" on Unix systems.
+
+For commonly-used scripts, it can be nice to add an alias to your terminal to shorten the invocation command.
+
+A good alias to start with is abbreviating ./cmod to just cmod.
+
+This can be done by adding the following to your .bashrc:
+
+.bashrc:
+```
+alias cmod='./cmod'
+```
+
+Now you can invoke cmod by with a slightly simpler command:
+
+```shell
+$ cmod <command>
+```
+
+Additional aliases will be suggested later in the tutorial.
 
 ### Summary
 
@@ -111,3 +129,5 @@ To recap, this is all we've done so far:
 
 - Add Cmod files to a dumb sample project
 - Setup cmod's Python virtual environment
+- Ran ./cmod help too make sure the cmod venv works
+- Added a simple "./cmod" alias

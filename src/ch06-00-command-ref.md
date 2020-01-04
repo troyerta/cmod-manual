@@ -14,9 +14,8 @@ Python scripts are a little less portable than Perl or Ruby scripts can be. I at
 
 
 
-
-Cmod is a collection of python scripts and classes that support structured software development technqiues,
-which in turn, simplifies other tasks like unit testing, TDD, and general code maintainence. Once you try it out
+Cmod is a collection of python scripts and classes that support structured software development techniques,
+which in turn, simplifies other tasks like unit testing, TDD, and general code maintenance. Once you try it out
 with a simple demo project, you'll see why this may be especially helpful for embedded systems projects using the
 C language.
 
